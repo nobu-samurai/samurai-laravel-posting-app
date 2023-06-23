@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use PHPUnit\Framework\Attributes\PostCondition;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,13 @@ Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 
 // 詳細ページ
 Route::get('/post/{post}', [PostController::class, 'show'])->name('posts.show');
+
+// 更新ページ
+Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name(
+  'post.edit'
+);
+
+// 更新機能
+Route::patch('/posts/{post}', [PostController::class, 'update'])->name(
+  'posts.update'
+);

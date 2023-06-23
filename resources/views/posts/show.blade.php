@@ -24,6 +24,10 @@
           <h2>{{ $post->title }}</h2>
           <p>{{ $post->content }}</p>
         </div>
+
+        <div>
+          <a href="{{ route('posts.edit', $post) }}">編集</a>
+        </div>
       </div>
     </article>
   </main>
