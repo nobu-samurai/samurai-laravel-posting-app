@@ -23,11 +23,11 @@
         <div>
           <a href="{{ route('posts.index') }}">&lt; 戻る</a>
         </div>
-        <form action="#" method="post">
+        <form action="{{ route('posts.store') }}" method="post">
           @csrf
           <div>
             <label for="title">タイトル</label>
-            <input type="text" name="titl">
+            <input type="text" name="title">
           </div>
           <div>
             <label for="content">本文</label>
