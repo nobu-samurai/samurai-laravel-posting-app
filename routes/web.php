@@ -35,7 +35,7 @@ Route::get('/post/{post}', [PostController::class, 'show'])->name('posts.show');
 
 // 更新ページ
 Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name(
-  'post.edit'
+  'posts.edit'
 );
 
 // 更新機能
