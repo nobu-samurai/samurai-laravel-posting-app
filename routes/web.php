@@ -18,8 +18,16 @@ Route::get('/', function () {
   return view('welcome');
 });
 
+// 一覧
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+
+// 作成ページ
 Route::get('/posts/create', [PostController::class, 'create'])->name(
   'posts.create'
 );
+
+// 作成機能
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+
+// 詳細ページ
+Route::get('/post/{post}', [PostController::class, 'show'])->name('posts.show');
