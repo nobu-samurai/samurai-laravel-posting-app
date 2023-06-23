@@ -15,35 +15,35 @@ use PHPUnit\Framework\Attributes\PostCondition;
 |
 */
 
-Route::get('/', function () {
-  return view('welcome');
-});
+Route::get('/', [PostController::class, 'index']);
 
-// 一覧
-Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+// // 一覧
+// Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
-// 作成ページ
-Route::get('/posts/create', [PostController::class, 'create'])->name(
-  'posts.create'
-);
+// // 作成ページ
+// Route::get('/posts/create', [PostController::class, 'create'])->name(
+//   'posts.create'
+// );
 
-// 作成機能
-Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+// // 作成機能
+// Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 
-// 詳細ページ
-Route::get('/post/{post}', [PostController::class, 'show'])->name('posts.show');
+// // 詳細ページ
+// Route::get('/post/{post}', [PostController::class, 'show'])->name('posts.show');
 
-// 更新ページ
-Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name(
-  'posts.edit'
-);
+// // 更新ページ
+// Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name(
+//   'posts.edit'
+// );
 
-// 更新機能
-Route::patch('/posts/{post}', [PostController::class, 'update'])->name(
-  'posts.update'
-);
+// // 更新機能
+// Route::patch('/posts/{post}', [PostController::class, 'update'])->name(
+//   'posts.update'
+// );
 
-// 削除機能
-Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name(
-  'posts.destroy'
-);
+// // 削除機能
+// Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name(
+//   'posts.destroy'
+// );
+
+Route::resource('posts', PostController::class);
